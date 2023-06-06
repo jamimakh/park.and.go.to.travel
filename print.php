@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['vpmsaid']==0)) {
+if (strlen($_SESSION['vpmsuid']==0)) {
   header('location:logout.php');
   } else{
 
@@ -73,7 +73,7 @@ if($row['Status']=="Out")
 <tr>
 <th>Out time</th>
 <td><?php  echo $row['OutTime'];?></td>
-<th>Parking Charge</th>
+<th>Rarking Charge</th>
 <td><?php  echo $row['ParkingCharge'];?></td>
 </tr>
 <tr>
@@ -99,5 +99,6 @@ WinPrint.document.write(prtContent.innerHTML);
 WinPrint.document.close();
 WinPrint.focus();
 WinPrint.print();
+WinPrint.close();
 }
 </script> 
